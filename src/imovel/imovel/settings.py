@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'django_filters',
+    'drf_yasg',
+    'coreapi',
 ]
 
 REST_FRAMEWORK = {
@@ -82,23 +85,26 @@ WSGI_APPLICATION = 'imovel.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-name = os.getenv('MYSQL_DATABASE', default='db')
-user = os.getenv('MYSQL_USER', default='banco')
-password = os.getenv('MYSQL_PASSWORD', default='root')
-host = os.getenv('HOST', default='0.0.0.0')
-
-
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': name,
-        'USER': user,
-        'PASSWORD': password,
-        'HOST': host,
+        'NAME': 'django_backend',
+        'USER': 'django',
+        'PASSWORD': 'root123',
+        'HOST': 'db',
         'PORT':'3306',
+    },
+    'test': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = DATABASES['test']
+    DATABASES['default']['OPTIONS'] = {'ignore': ['postgis', 'gis']}
+
 
 APPEND_SLASH = True
 
