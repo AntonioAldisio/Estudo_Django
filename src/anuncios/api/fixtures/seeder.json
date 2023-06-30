@@ -22,5 +22,17 @@
       "data_atualizacao": "2023-02-01T11:30:00Z",
       "imovel": 2
     }
+  },
+  {
+    "model": "api.anuncio",
+    "pk": 3,
+    "fields": {
+      "codigo_imovel": 5,
+      "plataforma": "123 Milhas",
+      "taxa_plataforma": "25.00",
+      "data_criacao": "2023-02-01T09:30:00Z",
+      "data_atualizacao": "2023-02-01T11:30:00Z",
+      "imovel": 5
+    }
   }
 ]
