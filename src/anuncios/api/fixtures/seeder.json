@@ -1,0 +1,26 @@
+[
+  {
+    "model": "api.anuncio",
+    "pk": 1,
+    "fields": {
+      "codigo_imovel": 1,
+      "plataforma": "AirBnb",
+      "taxa_plataforma": "10.00",
+      "data_criacao": "2023-01-01T10:00:00Z",
+      "data_atualizacao": "2023-01-01T12:00:00Z",
+      "imovel": 1
+    }
+  },
+  {
+    "model": "api.anuncio",
+    "pk": 2,
+    "fields": {
+      "codigo_imovel": 2,
+      "plataforma": "Booking",
+      "taxa_plataforma": "15.00",
+      "data_criacao": "2023-02-01T09:30:00Z",
+      "data_atualizacao": "2023-02-01T11:30:00Z",
+      "imovel": 2
+    }
+  }
+]

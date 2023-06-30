@@ -20,3 +20,14 @@ services:
       - db
     links:
       - db
+
+  anuncios:
+    build: src/anuncios
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    links:
+      - db
