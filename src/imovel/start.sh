@@ -1,6 +1,6 @@
 #!/bin/bash
-echo "Irei esperar 60 segundos"
-sleep 60
+echo "Irei esperar 50 segundos"
+sleep 50
 
 python manage.py makemigrations
 python manage.py migrate api
