@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -93,7 +92,7 @@ DATABASES = {
         'USER': 'django',
         'PASSWORD': 'root123',
         'HOST': 'db',
-        'PORT':'3306',
+        'PORT': '3306',
     },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
