@@ -1,18 +1,18 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from rest_framework import permissions
-from api.views import AnunciosViewSet
+from api.views import ReservaViewSet
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 router = DefaultRouter()
-router.register('anuncios', AnunciosViewSet, basename='anuncios')
+router.register('reserva', ReservaViewSet, basename='reserva')
 
 schema_view = get_schema_view(
     openapi.Info(
         title="Documentação da API",
         default_version='v1',
-        description="Documentação da API Anuncios",
+        description="Documentação da API Reserva",
         contact=openapi.Contact(email="antonioaldisio@gmail.com"),
         license=openapi.License(name="MIT License"),
     ),

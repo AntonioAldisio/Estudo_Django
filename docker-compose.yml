@@ -31,3 +31,14 @@ services:
       - db
     links:
       - db
+
+  reserva:
+    build: src/reservas
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    links:
+      - db
