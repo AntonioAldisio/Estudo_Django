@@ -45,11 +45,6 @@ INSTALLED_APPS = [
     'coreapi',
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
-}
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -95,13 +90,15 @@ DATABASES = {
     },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'NAME': ':memory:',
+        'TEST': {
+            'DEPENDENCIES': [],
+        },
     }
 }
 
 if 'test' in sys.argv:
     DATABASES['default'] = DATABASES['test']
-    DATABASES['default']['OPTIONS'] = {'ignore': ['postgis', 'gis']}
 
 APPEND_SLASH = True
 
