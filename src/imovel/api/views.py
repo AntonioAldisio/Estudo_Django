@@ -8,7 +8,9 @@ from .serializers import ImovelSerializer
 class ImovelViewSet(viewsets.ModelViewSet):
     queryset = Imovel.objects.all()
     serializer_class = ImovelSerializer
-    filter_backends = [filters.OrderingFilter, filters.SearchFilter, django_filters.rest_framework.DjangoFilterBackend]
+    filter_backends = [filters.OrderingFilter,
+                       filters.SearchFilter,
+                       django_filters.rest_framework.DjangoFilterBackend]
     search_fields = '__all__'
     filterset_fields = '__all__'
     ordering_fields = '__all__'
@@ -23,11 +25,13 @@ class ImovelViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
 
-    @swagger_auto_schema(request_body=ImovelSerializer, responses={201: ImovelSerializer()})
+    @swagger_auto_schema(request_body=ImovelSerializer,
+                         responses={201: ImovelSerializer()})
     def create(self, request, *args, **kwargs):
         return super().create(request, *args, **kwargs)
 
-    @swagger_auto_schema(request_body=ImovelSerializer, responses={200: ImovelSerializer()})
+    @swagger_auto_schema(request_body=ImovelSerializer,
+                         responses={200: ImovelSerializer()})
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
 
