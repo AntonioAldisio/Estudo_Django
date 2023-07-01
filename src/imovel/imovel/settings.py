@@ -46,8 +46,8 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10
 }
 
 MIDDLEWARE = [
@@ -96,13 +96,15 @@ DATABASES = {
     },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'NAME': ':memory:',
+        'TEST': {
+            'DEPENDENCIES': [],
+        },
     }
 }
 
 if 'test' in sys.argv:
     DATABASES['default'] = DATABASES['test']
-    DATABASES['default']['OPTIONS'] = {'ignore': ['postgis', 'gis']}
 
 
 APPEND_SLASH = True
