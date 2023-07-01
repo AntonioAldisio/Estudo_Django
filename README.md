@@ -57,6 +57,17 @@ $ docker-compose down
 Obs:
 Insomnia para realizar os testes, [clique aqui para visulaizar](./asset/insomnia/Insomnia.json)
 
+### 3.1 Documentação das API's
+
+1. Api Imoveis:
+    - http://0.0.0.0:8000/swagger
+
+2. Api Anuncios:
+    - http://0.0.0.0:8001/swagger
+
+3. Api Reservas:
+    - http://0.0.0.0:8002/swagger
+
 ## 4. Execução dos teste
 
 ### 4.1 Requisitos
