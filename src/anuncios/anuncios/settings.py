@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -95,10 +96,15 @@ DATABASES = {
     },
     'test': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'NAME': ':memory:',
+        'TEST': {
+            'DEPENDENCIES': [],
+        },
     }
 }
 
+if 'test' in sys.argv:
+    DATABASES['default'] = DATABASES['test']
 
 APPEND_SLASH = True
 # Password validation
