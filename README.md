@@ -1,4 +1,4 @@
-# Projeto de API's com Django
+# Django
 
 ## 1. Introdução
 
